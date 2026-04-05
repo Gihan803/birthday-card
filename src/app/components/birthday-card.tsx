@@ -184,7 +184,7 @@ export default function BirthdayCard() {
           {name}
         </h2>
 
-        <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed font-light">
+        <p className="text-white/80 text-lg md:text-xl mb-6 leading-relaxed font-light">
           Happy Birthday to the most precious person in my world, my{' '}
           <span 
             className="font-extrabold text-transparent bg-clip-text text-xl md:text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] tracking-wide"
@@ -193,6 +193,17 @@ export default function BirthdayCard() {
             මැණිකේ
           </span>
           . You truly are the gem that makes my life shine brighter every day. I love you beyond words! 🤍
+        </p>
+
+        <p className="text-white/60 text-base md:text-lg mb-10 italic font-light">
+          Sorry for the late{' '}
+          <span 
+            className="font-bold text-transparent bg-clip-text"
+            style={{ backgroundImage: `linear-gradient(to right, ${currentTheme.primary}, ${currentTheme.accent})` }}
+          >
+            මැණිකේ
+          </span>
+          {' '}🥺
         </p>
 
         <motion.button
