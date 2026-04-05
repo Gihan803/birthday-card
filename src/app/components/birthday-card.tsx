@@ -163,28 +163,35 @@ export default function BirthdayCard() {
         initial={{ opacity: 0, scale: 0.8, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.8, type: "spring" }}
-        className="glass-card relative z-10 w-full max-w-lg p-8 md:p-12 rounded-3xl mx-4 text-center cursor-default"
+        className="glass-card relative z-10 w-full max-w-lg px-6 py-12 md:px-12 md:py-20 rounded-3xl mx-4 text-center cursor-default overflow-visible"
       >
-        <motion.div
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="mx-auto w-24 h-24 mb-6 rounded-2xl flex items-center justify-center rotate-3 relative shadow-2xl"
-          style={{ background: `linear-gradient(135deg, ${currentTheme.primary}, ${currentTheme.secondary})` }}
-        >
-          <div className="absolute inset-0 bg-white/20 rounded-2xl animate-pulse-slow"></div>
-          <PartyPopper size={40} className="text-white relative z-10 -rotate-3 drop-shadow-md" />
-        </motion.div>
-
-        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text mb-4 drop-shadow-sm font-sans"
+        <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text mb-6 drop-shadow-sm font-sans"
             style={{ backgroundImage: `linear-gradient(to right, ${currentTheme.primary}, ${currentTheme.accent})` }}>
           Happy Birthday!
         </h1>
         
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 capitalize tracking-wide">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-10 capitalize tracking-wide">
           {name}
         </h2>
 
-        <p className="text-white/80 text-lg md:text-xl mb-6 leading-relaxed font-light">
+        {/* Photo Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="relative mx-auto w-44 h-44 md:w-56 md:h-56 mb-12 group"
+        >
+          <div className="absolute inset-0 bg-white/20 rounded-2xl blur-xl group-hover:bg-white/30 transition-all duration-500 animate-pulse-slow"></div>
+          <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+            <img 
+              src="/photo.jpeg" 
+              alt="Birthday person" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+
+        <p className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed font-light">
           Happy Birthday to the most precious person in my world, my{' '}
           <span 
             className="font-extrabold text-transparent bg-clip-text text-xl md:text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] tracking-wide"
@@ -195,7 +202,7 @@ export default function BirthdayCard() {
           . You truly are the gem that makes my life shine brighter every day. I love you beyond words! 🤍
         </p>
 
-        <p className="text-white/60 text-base md:text-lg mb-10 italic font-light">
+        <p className="text-white/60 text-base md:text-lg mb-12 italic font-light">
           Sorry for the late{' '}
           <span 
             className="font-bold text-transparent bg-clip-text"
@@ -210,7 +217,7 @@ export default function BirthdayCard() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={triggerConfetti}
-          className="w-full py-4 px-8 rounded-xl font-bold text-lg text-white shadow-xl flex items-center justify-center gap-3 transition-transform"
+          className="w-full py-4 px-8 rounded-xl font-bold text-lg text-white shadow-xl flex items-center justify-center gap-3 transition-transform mt-4"
           style={{ background: `linear-gradient(to right, ${currentTheme.primary}, ${currentTheme.secondary})` }}
         >
           <PartyPopper size={24} />
